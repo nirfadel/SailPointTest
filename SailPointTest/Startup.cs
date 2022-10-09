@@ -30,8 +30,6 @@ namespace SailPointTest
         {
             services.AddControllers();
             services.AddScoped<IRepository, Repository>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddDbContext<SailPointDBContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors(options =>
             {
